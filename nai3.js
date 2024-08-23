@@ -1,7 +1,7 @@
 const { HttpsProxyAgent } = require('https-proxy-agent');
 const proxy = 'http://127.0.0.1:7890';
 const agent = new HttpsProxyAgent(proxy);
-
+const {nai3_key} =requere('./config.js')
 const get_request_body=function(prompt,type){
     //生成seed
     function generateRandomNineDigitNumber() {
@@ -65,7 +65,7 @@ const headers = {
     'Accept-Language': 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
     'Accept-Encoding': 'gzip, deflate, br, zstd',
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer 这里填自己的key',
+    'Authorization': `Bearer ${nai3_key}`,
     'x-correlation-id': 'ij9PyX',
     'Origin': 'https://novelai.net',
     'Connection': 'keep-alive',

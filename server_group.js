@@ -10,8 +10,9 @@ const {get_random_pic} =require('./random_pic.js')
 const path = require('path');
 const fs= require('fs');
 const cors= require('cors');
+const {qwen_key}= require('./config.js')
 app.use(cors());
-const headers='Bearer Esf0KbHIYB7GreoU*tntMAHELF6sFvJ_v67hXrUuyUugNdkfAxEuB6c_OHVx7phv0 '// qwen的key
+const headers=`Bearer ${qwen_key} `// qwen的key
 let isNai3RequestInProgress = false; //控制nai3访问量
 // 选择角色模板
 history = [{"role": "system", "content":catGirl},
